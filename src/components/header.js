@@ -1,17 +1,22 @@
 import React, {Component} from "react";
+import { Link } from 'react-scroll';
 
-class Header extends Component {
+export default class Header extends Component {
     render() {
-        return (
-            <div style={{
+        return [
+            <ul key='ktos'>
+                <li><Link to="contact">Kontakt</Link></li>
+                <li>lista2</li>
+            </ul>,
+            <div key='cos' style={{
                 weight: '100px',
-                height: '800px',
+                height: '1200px',
                 backgroundColor: 'red'
             }}>
-                <p>TEST</p>
+                <p>TEST (source: header.js)</p>
             </div>
-        );
+
+        ];
     }
 }
 
-export default Header;
