@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="781f3618-61e8-4f10-87ea-d48f42c63410" name="Default Changelist" comment="" />
+    <list default="true" id="781f3618-61e8-4f10-87ea-d48f42c63410" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/fonts/merriweather-regular-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/merriweather-regular-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/opensans-regular-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/opensans-regular-webfont.woff2" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/home.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
@@ -28,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="420">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -37,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/footer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
@@ -115,6 +120,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="scss" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="give_it_in_good_hands" type="b2602c69:ProjectViewProjectNode" />
+              <item name="give_it_in_good_hands" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -180,10 +192,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19935000" />
+    <option name="totallyTimeSpent" value="20076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.14900662" />
@@ -192,7 +205,7 @@
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="3" visible="true" weight="0.329235" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="3" visible="true" weight="0.040983606" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.32921812" />
@@ -229,6 +242,20 @@
                 </list>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -316,8 +343,8 @@
     <entry file="file://$PROJECT_DIR$/src/components/middle.js" />
     <entry file="file://$PROJECT_DIR$/src/components/header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="420">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
