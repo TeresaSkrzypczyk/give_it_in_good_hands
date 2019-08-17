@@ -74,6 +74,11 @@
     padding: 0.5rem;
     text-align: center;
     width: 15rem;
+
+    & > a {
+      text-decoration: none;
+      color: $grey_dark;
+    }
   }
 
 }

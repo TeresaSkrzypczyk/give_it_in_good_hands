@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { Link } from 'react-scroll';
 import ThreeColumns from "./three_columns";
 import Registration from "./registration"
+import DoSomething from "./do_something";
 
 export default class Header extends Component {
     render() {
@@ -44,10 +45,7 @@ export default class Header extends Component {
                             </div>
 
                             <div className="col-12">
-                                <ul className="list-header">
-                                    <li>ODDAJ<br />RZECZY</li>
-                                    <li>ZORGANIZUJ<br />ZBIÓRKĘ</li>
-                                </ul>
+                                <DoSomething />
                             </div>
 
                     </div>

@@ -1,0 +1,28 @@
+.text-steps {
+  color: $grey_dark;
+  font-size: 2rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.gris {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 7rem;
+  text-align: center;
+
+  p {
+    font-size: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .special-small {
+    padding-top: 0.5rem;
+    font-size: 0.65rem;
+  }
+
+  hr {
+    width: 3rem;
+    margin: 0 auto;
+  }
+}
