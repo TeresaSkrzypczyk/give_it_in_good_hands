@@ -1,12 +1,10 @@
-.wrapper {
+.header {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
 
   .registration {
     list-style-type: none;
     font-size: 0.75rem;
-    margin: 2rem 0;
 
     li {
       cursor: pointer;
@@ -32,6 +30,7 @@
 
   .navigation {
     list-style-type: none;
+    padding-right: 1.5rem;
 
     li {
       cursor: pointer;
@@ -52,8 +51,61 @@
     }
 
   }
+}
 
-  .main-image {
+.text-header {
+  color: $grey_dark;
+  font-size: 2rem;
+  padding-top: 6rem;
+  text-align: center;
+}
+
+.list-header {
+  color: $grey_dark;
+  font-size: 1.75rem;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding-bottom: 6rem;
+
+  li {
+    border: 1px solid $grey_dark;
+    cursor: pointer;
+    padding: 0.5rem;
+    text-align: center;
+    width: 15rem;
   }
 
+}
+
+.image-decoration {
+  height: 2rem;
+  width: 10rem;
+}
+
+.three {
+  padding: 4rem 0;
+  background-color: $yellow_light;
+  color: $grey_dark;;
+}
+
+.three-columns {
+  text-align: center;
+  padding: 4rem 2rem;
+
+  h1 {
+    font-size: 4rem;
+    padding-bottom: 1rem;
+    font-weight: normal;
+  }
+
+  h3 {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 0.75rem;
+  }
 }
