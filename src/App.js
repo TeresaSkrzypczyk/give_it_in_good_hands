@@ -4,19 +4,15 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-//import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.sv
 import Home from './components/home';
+import './scss/main.scss';
 
 function App () {
     return (<HashRouter>
       <>
         <Switch>
           <Route exact path='/' component={Home} />
-          <div>
-            <h1>TEST</h1>
-            <h2>sprawdzamy czy coś działa</h2>
-          </div>
         </Switch>
       </>
     </HashRouter>);
