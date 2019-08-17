@@ -1,16 +1,20 @@
 import React, {Component} from "react";
+import Form from "./form";
 
 class Footer extends Component {
     render() {
-        return (
+        return [
             <div id="contact" style={{
                 weight: '100px',
-                height: '800px',
+                height: '400px',
                 backgroundColor: 'yellow'
             }}>
+                <div key="form">
+                    <Form />
+                </div>
                 <p>TEST</p>
             </div>
-        );
+            ]
     }
 }
 
