@@ -29,13 +29,13 @@ class Form extends Component {
     validate() {
         const errors = [];
 
-        if (this.state.name.length < 2) {
+        if (this.state.name === "" && this.state.name.indexOf(" ") === -1) {
             errors.push('Imię powinno być jednym wrazem');
         }
         if (this.state.email.length < 3 && this.state.email.indexOf("@") === -1) {
             errors.push('Pole email musi zawierać znak @ i co najmniej 3 znaki')
         }
-        if (this.state.text === "") {
+        if (this.state.text.length < 120) {
             errors.push('Wiadomość musi mieć conajmniej 120 znaków');
         }
         this.setState({errors});
@@ -59,7 +59,7 @@ class Form extends Component {
                         </div>
                     </div>
                     <div className="col-12">
-                    Wpisz swoją wiadomość<br /><textarea type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur" name="text" value={this.state.text} onChange={e => this.handleChange(e)} /><br />
+                    Wpisz swoją wiadomość<br /><textarea type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur" name="text" value={this.state.text} onChange={e => this.handleChange(e)} /><br />
                     <hr />
                     </div>
                     <div className="col-12 button">
