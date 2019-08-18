@@ -5,10 +5,11 @@
   text-align: center;
 }
 
-.gris {
+.grey {
+  background-color: #DCDCDC;
   display: flex;
   justify-content: space-between;
-  margin: 0 7rem;
+  padding: 2rem 7rem;
   text-align: center;
 
   p {
@@ -25,4 +26,9 @@
     width: 3rem;
     margin: 0 auto;
   }
+}
+
+.about-us {
+  text-align: center;
+  line-height: 1.75rem;
 }

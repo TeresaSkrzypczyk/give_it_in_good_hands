@@ -1,0 +1,49 @@
+form {
+  padding-bottom: 7rem;
+
+  .contact-form {
+    display: flex;
+
+    .name {
+      padding-right: 0.5rem;
+    }
+
+    .email {
+      padding-left: 0.5rem;
+    }
+  }
+
+}
+
+input:placeholder-shown {
+   border: none;
+}
+
+textarea {
+  border: none;
+  height: 3.5rem;
+  width: 100%;
+  font-family: $font-base;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  background-color: white;
+  color: $grey_dark;
+  font-size: 1rem;
+  border: 1px solid $grey_dark;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  text-align: center;
+}
+
+.copyright {
+  color: $grey_dark;
+  font-size: 0.75rem;
+  text-align: center;
+
+}
