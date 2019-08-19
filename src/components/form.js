@@ -73,7 +73,7 @@ class Form extends Component {
         return (
             <>
                 <div>
-                    <ul>{this.state.errors.map((error, index) => <li key={index}>{error}</li>)}</ul>
+                    <ul className="main-errors-list">{this.state.errors.map((error, index) => <li key={index}>{error}</li>)}</ul>
                     {this.state.send ? <h3>Dzięujemy</h3> : form}
                 </div>
             </>

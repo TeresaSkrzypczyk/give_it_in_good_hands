@@ -38,3 +38,77 @@
   justify-content: center;
   text-align: center;
 }
+
+.list-help {
+  display: flex;
+
+  .line-right-column {
+    //margin-bottom: 2.05rem;
+    margin-top: 1.05rem;
+  }
+
+  .text-one {
+    padding-bottom: 0.8rem;
+    padding-top: 1.7rem;
+  }
+
+  .text-two {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+  }
+
+  .text-three {
+    padding-top: 1.8rem;
+    margin-bottom: 4rem;
+  }
+
+  .right-column {
+    text-align: right;
+    font-family: $font-alt;
+    color: $grey_dark;
+    font-size: 0.75rem;
+  }
+}
+
+//.local {
+//  display: none;
+//}
+//
+//.foundation {
+//  display: none;
+//}
+
+.btn.list {
+  height: 4rem;
+  border: none;
+  font-family: $font-base;
+
+  &:active {
+    border: 1px solid $grey_dark;
+  }
+}
+
+.main-element {
+  font-family: $font-alt;
+  color: $grey_dark;
+  font-weight: 100;
+  font-size: 1.25rem;
+  padding-top: 1rem;
+}
+
+.left-column {
+  font-family: $font-alt;
+  color: $grey_dark;
+  font-size: 0.75rem;
+  font-style: italic;
+  padding-bottom: 1rem;
+}
+
+.main-errors-list {
+  list-style-type: none;
+  color: $yellow_dark;
+  font-size: 0.75rem;
+  font-style: italic;
+  padding-top: 2rem;
+  text-align: center;
+}

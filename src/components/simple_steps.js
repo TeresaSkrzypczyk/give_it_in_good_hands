@@ -12,7 +12,7 @@ class SimpleSteps extends Component {
                     </div>
 
                     <div className="col-12 image-decoration" style={{border: "2px solid yellow"}}>
-                        <img src="../asstes/Decoration.svg" />
+                        <img src="asstes/Decoration.svg" />
                     </div>
 
                     <div className="col-12 grey">
