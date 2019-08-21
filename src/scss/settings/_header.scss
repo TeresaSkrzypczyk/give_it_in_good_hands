@@ -1,6 +1,11 @@
+.header-hero {
+  background: url('../../asstes/Home-Hero-Image.jpg') no-repeat left center / contain;
+}
+
 .header {
   display: flex;
   justify-content: flex-end;
+
 
   .registration {
     list-style-type: none;

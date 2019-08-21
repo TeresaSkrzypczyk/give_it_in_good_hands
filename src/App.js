@@ -9,13 +9,15 @@ import Home from './components/home';
 import './scss/main.scss';
 
 function App () {
-    return (<HashRouter>
-      <>
-        <Switch>
-          <Route exact path='/' component={Home} />
-        </Switch>
-      </>
-    </HashRouter>);
+    return (
+        <HashRouter>
+          <>
+            <Switch>
+              <Route exact path='/' component={Home} />
+            </Switch>
+          </>
+        </HashRouter>
+    );
 }
 
 // function App() {

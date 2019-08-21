@@ -3,22 +3,14 @@ import { Link } from 'react-scroll';
 import ThreeColumns from "./three_columns";
 import Registration from "./registration"
 import DoSomething from "./do_something";
+import Image from '../asstes/Home-Hero-Image.jpg'
 
 export default class Header extends Component {
     render() {
         return [
-            <div className="wrapper">
+            <div className="wrapper header-hero">
                 <div className="row">
-
-                    <div className="col-5">
-                        <div className="image-header" style={{border: "2px solid yellow"}}>
-                            <img src="../asstes/Home-Hero-Image.jpg" />
-                        </div>
-                    </div>
-
                     <div className="col-7">
-
-
                             <div className="col-12 header">
                                 <div className="registration" key="registration"><Registration />
                                 </div>
