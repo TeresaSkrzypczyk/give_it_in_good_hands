@@ -1,16 +1,24 @@
 import React, {Component} from "react";
 import { Link } from 'react-scroll';
-import ThreeColumns from "./three_columns";
+import ThreeColumns from "./ThreeColumns";
 import Registration from "./registration"
-import DoSomething from "./do_something";
-import Image from '../asstes/Home-Hero-Image.jpg'
+import DoSomething from "./DoSomething";
 
 export default class Header extends Component {
     render() {
         return [
-            <div className="wrapper header-hero">
+            <div className="wrapper-image header-hero">
+                <div className="wrapper-text">
                 <div className="row">
+
+                    <div className="col-5">
+                        <div>
+                        </div>
+                    </div>
+
                     <div className="col-7">
+
+
                             <div className="col-12 header">
                                 <div className="registration" key="registration"><Registration />
                                 </div>
@@ -29,17 +37,17 @@ export default class Header extends Component {
 
 
                             <div className="col-12">
-                                <p className="text-header">Zacznij pomagać!<br />Oddaj niechciane rzeczy w zaufane ręce</p>
+                                <p className="text-header main">Zacznij pomagać!<br />Oddaj niechciane rzeczy w zaufane ręce</p>
                             </div>
 
-                            <div className="col-12 image-decoration" style={{border: "2px solid yellow"}}>
-                                <img src="../asstes/Decoration.svg" />
+                            <div className="decoration">
                             </div>
 
                             <div className="col-12">
                                 <DoSomething />
                             </div>
 
+                    </div>
                     </div>
                 </div>
             </div>,
