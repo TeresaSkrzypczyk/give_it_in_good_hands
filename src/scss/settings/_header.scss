@@ -1,19 +1,4 @@
-.decoration {
-  background: url('../../asstes/Decoration.svg') no-repeat right center / contain;
-  width: 10rem;
-  height: 3rem;
-  padding-left: 15rem;
-  display: block;
-  margin-left: 17rem;
-}
-.decoration.steps {
-  margin-left: 40rem;
-  margin-top: 1rem;
-}
 
-.header-hero {
-  background: url('../../asstes/Home-Hero-Image.jpg') no-repeat left center / contain;
-}
 
 .header {
   display: flex;
@@ -88,7 +73,7 @@
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  padding: 0.5rem 0 6rem 6rem;
+  padding: 0.5rem 0 4rem 6rem;
 
   li {
     border: 1px solid $grey_dark;
@@ -115,14 +100,14 @@
 //}
 
 .three {
-  padding: 4rem 0;
+  padding-bottom: 1rem;
   background-color: $yellow_light;
   color: $grey_dark;;
 }
 
 .three-columns {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
 
   h1 {
     font-size: 4rem;
