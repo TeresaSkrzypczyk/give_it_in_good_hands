@@ -1,3 +1,7 @@
+.footer {
+  background-color: white;
+}
+
 form {
   padding-bottom: 7rem;
 
@@ -45,5 +49,8 @@ textarea {
   color: $grey_dark;
   font-size: 0.75rem;
   text-align: center;
-
+  padding-bottom: 1rem;
+  //position: absolute;
+  margin-top: 34rem;
+  margin-left: 34rem;
 }
