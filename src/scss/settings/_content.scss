@@ -80,6 +80,16 @@
   }
 }
 
+.btn.end {
+  margin: 2rem 0 6rem 7rem;
+
+  & > a {
+    text-decoration: none;
+    color: $grey_dark;
+  }
+
+}
+
 .main-element {
   font-family: $font-alt;
   color: $grey_dark;

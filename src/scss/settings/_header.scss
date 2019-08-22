@@ -44,6 +44,11 @@
         padding: 0.5rem 1rem;
       }
 
+      &:hover {
+        border: 1px solid $grey_dark;
+        padding: 0.5rem 1rem;
+      }
+
       & > a {
         text-decoration: none;
         color: $grey_dark;

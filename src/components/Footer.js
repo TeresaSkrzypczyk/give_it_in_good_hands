@@ -1,5 +1,8 @@
 import React, {Component} from "react";
 import Form from "./form";
+import Log from "./Logowanie";
+import Sign from "./Rejestracja";
+import LogOut from "./LogOut";
 
 class Footer extends Component {
     render() {
@@ -40,7 +43,11 @@ class Footer extends Component {
 
                 </div>
         </div>
-            </div>
+            </div>,
+
+            <Log />,
+            <Sign />,
+            <LogOut />
             ]
     }
 }

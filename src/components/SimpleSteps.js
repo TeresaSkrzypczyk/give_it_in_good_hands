@@ -43,7 +43,7 @@ class SimpleSteps extends Component {
 
                     <div className="col-12">
                         <ul className="list-header steps">
-                            <li key="return"><Link to="/log">ODDAJ<br />RZECZY</Link></li>
+                            <li key="return"><Link to="/logowanie">ODDAJ<br />RZECZY</Link></li>
                         </ul>
                     </div>
 

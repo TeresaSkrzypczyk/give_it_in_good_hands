@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import { Link } from 'react-scroll';
+//import { Link } from 'react-scroll';
 import ThreeColumns from "./ThreeColumns";
-import Registration from "./registration"
+//import Registration from "./registration"
 import DoSomething from "./DoSomething";
+import Menu from "./Menu";
 
 export default class Header extends Component {
     render() {
@@ -18,23 +19,7 @@ export default class Header extends Component {
 
                     <div className="col-7">
 
-
-                            <div className="col-12 header">
-                                <div className="registration" key="registration"><Registration />
-                                </div>
-                            </div>
-
-                            <div className="col-12 header">
-                                <ul className="navigation" key="navigation">
-                                    <li>Start</li>
-                                    <li><Link to="simple_steps"> O co chodzi?</Link></li>
-                                    <li><Link to="about_us">O nas</Link></li>
-                                    <li><Link to="who_we_help">Fundacja i organizacje</Link></li>
-                                    <li><Link to="contact">Kontakt</Link></li>
-                                </ul>
-                            </div>
-
-
+                            <Menu />
 
                             <div className="col-12">
                                 <p className="text-header main">Zacznij pomagać!<br />Oddaj niechciane rzeczy w zaufane ręce</p>

@@ -5,7 +5,7 @@ import {
   Switch,
 } from 'react-router-dom';
 //import logo from './logo.sv
-import Home from './components/home';
+import Home from './components/Home';
 import './scss/main.scss';
 
 function App () {
