@@ -1,17 +1,17 @@
 import React, {Component} from "react";
 
-class Form extends Component {
+class AboutUs extends Component {
     render() {
         return (
-            <div style={{
+            <div id="about_us" style={{
                 weight: '100px',
                 height: '400px',
-                backgroundColor: 'brown'
+                backgroundColor: 'green'
             }}>
-                <p>Form - część footera</p>
+                <p>About us - o nas</p>
             </div>
         );
     }
 }
 
-export default Form;
+export default AboutUs;

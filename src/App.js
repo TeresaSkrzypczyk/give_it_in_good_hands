@@ -5,19 +5,17 @@ import {
   Switch,
 } from 'react-router-dom';
 //import logo from './logo.sv
-import Home from './components/Home';
+import Home from './components/home';
 import './scss/main.scss';
 
 function App () {
-    return (
-        <HashRouter>
-          <>
-            <Switch>
-              <Route exact path='/' component={Home} />
-            </Switch>
-          </>
-        </HashRouter>
-    );
+    return (<HashRouter>
+      <>
+        <Switch>
+          <Route exact path='/' component={Home} />
+        </Switch>
+      </>
+    </HashRouter>);
 }
 
 // function App() {
