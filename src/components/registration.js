@@ -5,8 +5,10 @@ class Registration extends Component {
     render() {
         return [
             <div className="wrapper">
-                <Link to="/logowanie">Zaloguj</Link>
-                <Link to="/rejestracja">Załóż konto</Link>
+                <ul className="registration">
+                    <li><Link to="/logowanie">Zaloguj</Link></li>
+                    <li><Link to="/rejestracja">Załóż konto</Link></li>
+                </ul>
             </div>
         ]
     }

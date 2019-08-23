@@ -6,8 +6,9 @@ import {
 } from 'react-router-dom';
 //import logo from './logo.sv
 import Home from './components/Home';
-import Logowanie from './components/Logowanie';
-import Rejestracja from './components/Logowanie';
+import Log from './components/Logowanie';
+import LogOut from './components/LogOut';
+import Sign from './components/Rejestracja';
 import './scss/main.scss';
 
 function App () {
@@ -16,8 +17,9 @@ function App () {
           <>
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route path='/logowanie' component={Logowanie} />
-              <Route path='/rejestracja' component={Rejestracja} />
+              <Route path='/logowanie' component={Log} />
+              <Route path='/rejestracja' component={Sign} />
+              <Route path='/wylogowano' component={LogOut} />
             </Switch>
           </>
         </Router>

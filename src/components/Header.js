@@ -8,11 +8,9 @@ export default class Header extends Component {
         return [
             <div className="wrapper-image header-hero">
                 <div className="wrapper-text">
-                <div className="row">
+                    <div className="row">
 
                     <div className="col-5">
-                        <div>
-                        </div>
                     </div>
 
                     <div className="col-7">
@@ -38,7 +36,6 @@ export default class Header extends Component {
             <div key="three columns" className="wrapper three">
                 <ThreeColumns />
             </div>
-
         ];
     }
 }

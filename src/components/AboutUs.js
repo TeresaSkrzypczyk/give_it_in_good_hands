@@ -4,8 +4,8 @@ class AboutUs extends Component {
     render() {
         return (
             <div className="wrapper-image people">
-            <div className="wrapper-text">
-                <div className="row">
+                <div className="wrapper-text">
+                    <div className="row">
 
 
                     <div id="about_us" className="col-6">
@@ -28,8 +28,8 @@ class AboutUs extends Component {
                     <div className="col-6">
                     </div>
 
+                    </div>
                 </div>
-            </div>
             </div>
         );
     }
