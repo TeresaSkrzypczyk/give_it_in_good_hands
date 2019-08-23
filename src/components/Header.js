@@ -1,7 +1,5 @@
 import React, {Component} from "react";
-//import { Link } from 'react-scroll';
 import ThreeColumns from "./ThreeColumns";
-//import Registration from "./registration"
 import DoSomething from "./DoSomething";
 import Menu from "./Menu";
 
