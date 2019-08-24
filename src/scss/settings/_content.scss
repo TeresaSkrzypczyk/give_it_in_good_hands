@@ -9,7 +9,7 @@
   background-color: #DCDCDC;
   display: flex;
   justify-content: space-between;
-  padding: 2rem 7rem;
+  padding: 2rem 18rem;
   text-align: center;
 
   p {
@@ -70,14 +70,6 @@
   }
 }
 
-//.local {
-//  display: none;
-//}
-//
-//.foundation {
-//  display: none;
-//}
-
 .btn.list {
   height: 4rem;
   border: none;
@@ -86,6 +78,16 @@
   &:active {
     border: 1px solid $grey_dark;
   }
+}
+
+.btn.end {
+  margin: 2rem 0 6rem 7rem;
+
+  & > a {
+    text-decoration: none;
+    color: $grey_dark;
+  }
+
 }
 
 .main-element {

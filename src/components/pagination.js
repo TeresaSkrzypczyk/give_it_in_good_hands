@@ -136,4 +136,4 @@ const foundations = [
     }
 ];
 
-
+export default {goverments, foundations, locales}

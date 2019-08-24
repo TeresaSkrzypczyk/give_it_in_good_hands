@@ -1,4 +1,16 @@
-.wrapper {
+.wrapper-image {
+  ///max-width: 1200px;
+  //margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  //width: 100%;
+}
+.wrapper-image.people {
+  background-color: #DCDCDC;
+}
+
+.wrapper-text {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;

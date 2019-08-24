@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./header"
-import Footer from "./footer";
-import SimpleSteps from "./simple_steps";
-import AboutUs from "./about_us";
-import WhoWeHelp from "./who_we_help";
+import Header from "./Header"
+import Footer from "./Footer";
+import SimpleSteps from "./SimpleSteps";
+import AboutUs from "./AboutUs";
+import WhoWeHelp from "./WhoWeHelp";
 
 const Home = () => (
     <>

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-end;
 
+
   .registration {
     list-style-type: none;
     font-size: 0.75rem;
@@ -30,7 +31,7 @@
 
   .navigation {
     list-style-type: none;
-    padding-right: 1.5rem;
+    //padding-right: 1.5rem;
 
     li {
       cursor: pointer;
@@ -39,6 +40,11 @@
       margin-left: 2rem;
 
       &:first-child {
+        border: 1px solid $grey_dark;
+        padding: 0.5rem 1rem;
+      }
+
+      &:hover {
         border: 1px solid $grey_dark;
         padding: 0.5rem 1rem;
       }
@@ -55,9 +61,13 @@
 
 .text-header {
   color: $grey_dark;
-  font-size: 2rem;
+  font-size: 1.8rem;
   padding-top: 6rem;
   text-align: center;
+}
+
+.text-header.main {
+  padding: 4rem 0 0 6rem;
 }
 
 .list-header {
@@ -66,7 +76,7 @@
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  padding-bottom: 6rem;
+  padding: 0.5rem 0 4rem 6rem;
 
   li {
     border: 1px solid $grey_dark;
@@ -83,20 +93,19 @@
 
 }
 
-.image-decoration {
-  height: 2rem;
-  width: 10rem;
+.list-header.steps {
+  margin-left: -6rem;
 }
 
 .three {
-  padding: 4rem 0;
+  padding-bottom: 1rem;
   background-color: $yellow_light;
   color: $grey_dark;;
 }
 
 .three-columns {
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
 
   h1 {
     font-size: 4rem;
