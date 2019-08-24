@@ -10,15 +10,28 @@
     label>span {
       padding-left: 2rem;
     }
-    label>input {
-      margin-left: 2rem;
-      background-color: #DCDCDC;
-      border: none;
-    }
 
   }
 
-  .log-button {
+.inputWithoutError {
+  margin-left: 2rem;
+  background-color: #DCDCDC;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: $grey;
+  width: 77%;
+}
+
+.inputWithError {
+  margin-left: 2rem;
+  background-color: #DCDCDC;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: red;
+  width: 77%;
+}
+
+.log-button {
     display: flex;
     justify-content: space-between;
 
@@ -36,9 +49,20 @@
 
 }
 
-.log-line {
-  width: 15rem;
-  margin-left: 2rem;
-  margin-bottom: 0.5rem;
-  color: $grey_dark;
+// .log-line {
+//   width: 15rem;
+//   margin-left: 2rem;
+//   margin-bottom: 0.5rem;
+//   color: $grey_dark;
+// }
+
+.errors-form {
+  font-size: 0.65rem;
+  color: red;
+  //text-align: center;
+  margin-left: 2rem;  
 }
+
+.not-last {
+    padding-bottom: 0.5rem;
+  }

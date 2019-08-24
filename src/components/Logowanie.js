@@ -31,13 +31,12 @@ class Log extends Component {
     validate() {
         let emailError = "";
         let passwordError = "";
-        //const errors = "";
 
         if (this.state.email.length < 3 && this.state.email.indexOf("@") === -1) {
-            emailError = 'Pole email musi zawierać znak @ i co najmniej 3 znaki';
+            emailError = 'Podany email jest nieprawidłowy!';
         }
         if (this.state.password.length < 6) {
-            passwordError = 'Hasło musi musi zawierać conajmniej 6 znaków';
+            passwordError = 'Podane hasło jest za krótkie!';
         }
         this.setState({emailError, passwordError });
         return false;
@@ -65,12 +64,12 @@ class Log extends Component {
                                         <div className="log-form">
                                             <label>
                                                 <span>Email</span><br />
-                                                <input type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} /><br /> <hr className="log-line"/> </label>
-                                            <div style={{ fontSize: 12, color: "red" }}>
+                                                <input className={this.state.emailError ? "inputWithError" : "inputWithoutError" } type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} /><br /></label>
+                                            <div className="errors-form not-last">
                                                 {this.state.emailError}
                                             </div>
-                                            <label><span>Hasło</span><br /><input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} /><br /> <hr className="log-line"/></label>
-                                            <div style={{ fontSize: 12, color: "red" }}>
+                                            <label><span>Hasło</span><br /><input className={this.state.passwordError ? "inputWithError" : "inputWithoutError" } type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} /><br /></label>
+                                            <div className="errors-form">
                                                 {this.state.passwordError}
                                             </div>
                                         </div>
