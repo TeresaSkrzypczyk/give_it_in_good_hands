@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class Form extends Component {
+class ThreeColumns extends Component {
     render() {
         return (
             <div style={{
@@ -8,10 +8,10 @@ class Form extends Component {
                 height: '400px',
                 backgroundColor: 'brown'
             }}>
-                <p>Form - część footera</p>
+                <p>Three columns - część headera</p>
             </div>
         );
     }
 }
 
-export default Form;
+export default ThreeColumns;
