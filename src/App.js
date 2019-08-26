@@ -1,42 +1,29 @@
 import React from 'react';
 import {
-  HashRouter,
+  HashRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
 //import logo from './logo.sv
-import Home from './components/home';
+import Home from './components/Home';
+import Log from './components/Logowanie';
+// import LogOut from './components/LogOut';
+import Sign from './components/Rejestracja';
 import './scss/main.scss';
 
 function App () {
-    return (<HashRouter>
-      <>
-        <Switch>
-          <Route exact path='/' component={Home} />
-        </Switch>
-      </>
-    </HashRouter>);
+    return (
+        <Router>
+          <>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/logowanie' component={Log} />
+              <Route path='/rejestracja' component={Sign} />
+              {/*<Route path='/wylogowano' component={LogOut} />*/}
+            </Switch>
+          </>
+        </Router>
+    );
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;
