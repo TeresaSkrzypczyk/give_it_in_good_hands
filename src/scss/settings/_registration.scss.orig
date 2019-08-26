@@ -49,19 +49,20 @@
 
 }
 
+// .log-line {
+//   width: 15rem;
+//   margin-left: 2rem;
+//   margin-bottom: 0.5rem;
+//   color: $grey_dark;
+// }
+
 .errors-form {
   font-size: 0.65rem;
   color: red;
   //text-align: center;
   margin-left: 2rem;  
-
-  
 }
 
 .not-last {
     padding-bottom: 0.5rem;
   }
-  
-.contact-form {
-   margin: 0;
-}

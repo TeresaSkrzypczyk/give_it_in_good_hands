@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import axios from 'axios';
 
 class Form extends Component {
     constructor(props) {
@@ -7,7 +8,9 @@ class Form extends Component {
             name: "",
             email: "",
             text: "",
-            errors: [],
+            nameError: "",
+            emailError: "",
+            textError: "",
             send: false
         }
     }
@@ -21,47 +24,82 @@ class Form extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
+        // const data=this.state;
+        // console.log(data);
+
         if (this.validate()) {
             this.setState({send: true})
         }
+        
+        // axios({
+        //     method: 'post',
+        //     url: 'https://fer-api.coderslab.pl/v1/portfolio/contact',
+        //     data: data,
+        //     config: { headers: {'Content-Type': 'application/json' }}
+        // })
+        // .then (function (response) {
+        //         console.log(response);
+        // })
+        // .catch (function (error) {
+        //         console.log(error);
+        // });
+
     }
 
     validate() {
-        const errors = [];
+        let nameError = "";
+        let emailError = "";
+        let textError = "";
 
         if (this.state.name === "" && this.state.name.indexOf(" ") === -1) {
-            errors.push('Imię powinno być jednym wrazem');
+            nameError ='Podane imię jest nieprawidłowe!';
         }
         if (this.state.email.length < 3 && this.state.email.indexOf("@") === -1) {
-            errors.push('Pole email musi zawierać znak @ i co najmniej 3 znaki')
+            emailError ='Podany email jest nierpawidłowy!';
         }
         if (this.state.text.length < 120) {
-            errors.push('Wiadomość musi mieć conajmniej 120 znaków');
+            textError = 'Wiadomość musi mieć conajmniej 120 znaków!';
         }
-        this.setState({errors});
-        return errors.length === 0;
+        this.setState({nameError, emailError, textError});
+        return false;
     }
 
     render() {
 
         const form = (
-            <form onSubmit={e => this.handleSubmit(e)} method="POST">
+            <form onSubmit={e => this.handleSubmit(e)}>
 
                 <div className="col-12">
+
                     <div className="col-12 contact-form">
                         <div className="col-6 name">
-                        Wpisz swoje imię<input type="text" placeholder="Krzysztof" name="name" value={this.state.name} onChange={e => this.handleChange(e)} /><br />
-                        <hr />
+                        <label><span>Wpisz swoje imię</span><br />
+                        <input className={this.state.nameError ? "inputWithError" : "inputWithoutError" } type="text" placeholder="Krzysztof" name="name" value={this.state.name} onChange={e => this.handleChange(e)} /><br />
+                        </label>
+                        <div className="errors-form not-last contact-form">
+                            {this.state.nameError}
                         </div>
+                        </div>
+
                         <div className="col-6 email">
-                        Wpisz swój email<input type="email" placeholder="abc@xyz.pl" name="email" value={this.state.email} onChange={e => this.handleChange(e)} /><br />
-                        <hr />
+                        <label><span>Wpisz swój email</span><br />
+                        <input className={this.state.emailError ? "inputWithError" : "inputWithoutError" } type="email" placeholder="abc@xyz.pl" name="email" value={this.state.email} onChange={e => this.handleChange(e)} /><br />
+                        </label>
+                        <div className="errors-form not-last contact-form">
+                            {this.state.emailError}
+                        </div>
                         </div>
                     </div>
+
                     <div className="col-12">
-                    Wpisz swoją wiadomość<br /><textarea type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur" name="text" value={this.state.text} onChange={e => this.handleChange(e)} /><br />
-                    <hr />
+                    <label><span>Wpisz swoją wiadomość</span><br />
+                    <textarea className={this.state.textError ? "inputWithError" : "inputWithoutError" } type="text" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur" name="text" value={this.state.text} onChange={e => this.handleChange(e)} /><br />
+                    </label>
+                    <div className="errors-form not-last contact-form">
+                        {this.state.textError}
                     </div>
+                    </div>
+
                     <div className="col-12 button">
                     <button className="btn" type="submit">Wyślij</button>
                     </div>
@@ -70,12 +108,11 @@ class Form extends Component {
             </form>
         );
 
+        const thanks = (<h3 className="text-form">Wiadomość została wysłana!<br />Wkrótce się skontaktujemy.<br /></h3>);
+
         return (
             <>
-                <div>
-                    <ul className="main-errors-list">{this.state.errors.map((error, index) => <li key={index}>{error}</li>)}</ul>
-                    {this.state.send ? <h3>Dzięujemy</h3> : form}
-                </div>
+                    {this.state.send ? <>{thanks}{form}</>: form}
             </>
         );
     }

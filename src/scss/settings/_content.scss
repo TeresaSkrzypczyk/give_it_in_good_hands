@@ -106,11 +106,16 @@
   padding-bottom: 1rem;
 }
 
-.main-errors-list {
-  list-style-type: none;
-  color: $yellow_dark;
-  font-size: 0.75rem;
-  font-style: italic;
-  padding-top: 2rem;
-  text-align: center;
+.inputWithoutError {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: $grey;
+  width: 100%;
+}
+
+.inputWithError {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: red;
+  width: 100%;
 }

@@ -12,11 +12,11 @@ class Menu extends Component {
 
             <div className="col-12 header">
                 <ul className="navigation" key="navigation">
-                    <li>Start</li>
-                    <li><Link to="simple_steps"> O co chodzi?</Link></li>
-                    <li><Link to="about_us">O nas</Link></li>
-                    <li><Link to="who_we_help">Fundacja i organizacje</Link></li>
-                    <li><Link to="contact">Kontakt</Link></li>
+                    <li key="start"><Link to="/">Start</Link></li>
+                    <li key="simple"><Link to="simple_steps"> O co chodzi?</Link></li>
+                    <li key="about"><Link to="about_us">O nas</Link></li>
+                    <li key="who"><Link to="who_we_help">Fundacja i organizacje</Link></li>
+                    <li key="end"><Link to="contact">Kontakt</Link></li>
                 </ul>
             </div>
         ]

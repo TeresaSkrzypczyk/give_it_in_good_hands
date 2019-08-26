@@ -3,7 +3,7 @@
 }
 
 form {
-  padding-bottom: 7rem;
+  padding-bottom: 9rem;
 
   .contact-form {
     display: flex;
@@ -19,13 +19,11 @@ form {
 
 }
 
-input:placeholder-shown {
-   border: none;
-}
-
 textarea {
-  border: none;
-  height: 4.5rem;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: $grey;
+  height: 5rem;
   width: 100%;
   font-family: $font-base;
 }

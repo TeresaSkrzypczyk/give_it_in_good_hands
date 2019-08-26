@@ -38,15 +38,17 @@
       display: inline-block;
       color: $grey_dark;
       margin-left: 2rem;
+      //margin-right: 0.5rem;
 
       &:first-child {
         border: 1px solid $grey_dark;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
       }
 
       &:hover {
         border: 1px solid $grey_dark;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
       }
 
       & > a {
