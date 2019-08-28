@@ -1,11 +1,12 @@
-.header {
+.wrapper {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
-
 
   .registration {
     list-style-type: none;
     font-size: 0.75rem;
+    margin: 2rem 0;
 
     li {
       cursor: pointer;
@@ -27,7 +28,6 @@
 
       &:hover { 
         border: 1px solid $yellow_light;
-        padding: 0.5rem;
       }
 
       // &:focus {
@@ -55,7 +55,6 @@
 
       &:hover { 
         border: 1px solid $grey_dark;
-        padding: 0.5rem 1rem;
       }
 
       & > a {
@@ -68,69 +67,7 @@
     }
 
   }
-}
 
-.text-header {
-  color: $grey_dark;
-  font-size: 1.8rem;
-  padding-top: 6rem;
-  text-align: center;
-}
 
-.text-header.main {
-  padding: 4rem 0 0 6rem;
-}
 
-.list-header {
-  color: $grey_dark;
-  font-size: 1.75rem;
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-  padding: 0.5rem 0 4rem 6rem;
-
-  li {
-    border: 1px solid $grey_dark;
-    cursor: pointer;
-    padding: 0.5rem;
-    text-align: center;
-    width: 15rem;
-
-    & > a {
-      text-decoration: none;
-      color: $grey_dark;
-    }
-  }
-
-}
-
-.list-header.steps {
-  margin-left: -6rem;
-}
-
-.three {
-  padding-bottom: 1rem;
-  background-color: $yellow_light;
-  color: $grey_dark;;
-}
-
-.three-columns {
-  text-align: center;
-  padding: 2rem;
-
-  h1 {
-    font-size: 4rem;
-    padding-bottom: 1rem;
-    font-weight: normal;
-  }
-
-  h3 {
-    font-size: 1rem;
-    padding-bottom: 1rem;
-    font-weight: normal;
-  }
-
-  p {
-    font-size: 0.75rem;
-  }
 }
