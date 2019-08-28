@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import axios from 'axios';
 
 class List extends Component {
     constructor(props) {
@@ -6,7 +7,8 @@ class List extends Component {
         this.state = {
             government: true,
             foundation: false,
-            local: false
+            local: false,
+            everyOrganization: []
         }
     }
 
@@ -35,6 +37,16 @@ class List extends Component {
             government: false,
             local: true
         }))
+    }
+
+    componentDidMount() { 
+        let url = 'http://localhost:3001'
+        
+        axios.get(url).then(response => response.data)
+        .then((data) => {
+            this.setState({ everyOrganization: data })
+            console.log(this.state.everyOrganization)
+        });
     }
 
     render() {

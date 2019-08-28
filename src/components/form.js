@@ -11,7 +11,8 @@ class Form extends Component {
             nameError: "",
             emailError: "",
             textError: "",
-            send: false
+            send: false,
+            errors: []
         }
     }
 
@@ -24,25 +25,35 @@ class Form extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        // const data=this.state;
-        // console.log(data);
+        const data=this.state;
+        console.log(data);
 
         if (this.validate()) {
             this.setState({send: true})
         }
         
-        // axios({
-        //     method: 'post',
-        //     url: 'https://fer-api.coderslab.pl/v1/portfolio/contact',
-        //     data: data,
-        //     config: { headers: {'Content-Type': 'application/json' }}
-        // })
-        // .then (function (response) {
-        //         console.log(response);
-        // })
-        // .catch (function (error) {
-        //         console.log(error);
-        // });
+        axios({
+            method: 'post',
+            url: 'https://fer-api.coderslab.pl/v1/portfolio/contact',
+            data: data,
+            config: { headers: {'Content-Type': 'application/json' }}
+        })
+        .then (function (response) {
+                console.log(response);
+                // json({
+                //     status: "success"
+                //     success: true,
+                //     status: 200,
+                //     data: data
+                // });
+        })
+        .catch (function (error) {
+                console.log(error);
+            //     res.status(401).json({ 
+            //         success: false, 
+            //         message: 'Something was wrong' 
+            // });
+        });
 
     }
 
@@ -50,17 +61,22 @@ class Form extends Component {
         let nameError = "";
         let emailError = "";
         let textError = "";
+        let errors = [];
 
-        if (this.state.name === "" && this.state.name.indexOf(" ") === -1) {
+        if (this.state.name.length < 2 && this.state.name.indexOf(" ") === -1) {
             nameError ='Podane imię jest nieprawidłowe!';
+            errors.push(nameError);
         }
         if (this.state.email.length < 3 && this.state.email.indexOf("@") === -1) {
             emailError ='Podany email jest nierpawidłowy!';
+            errors.push(emailError);
         }
         if (this.state.text.length < 120) {
             textError = 'Wiadomość musi mieć conajmniej 120 znaków!';
+            errors.push(textError);
         }
         this.setState({nameError, emailError, textError});
+        console.log(errors);
         return false;
     }
 
