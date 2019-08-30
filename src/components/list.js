@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import axios from 'axios';
+//import Pagination from "react-js-pagination";
 
 class List extends Component {
     constructor(props) {
@@ -6,8 +8,21 @@ class List extends Component {
         this.state = {
             government: true,
             foundation: false,
-            local: false
+            local: false,
+            governmentJson: [],
+            foundationJson: [],
+            localJson: [],
+            //for pagination all records
+            currentPage: 1,
+            listPerPage: 3
+
+            //activePage: 1,
+            // itemsCountPerPage: 1,
+            // totalItemsCount: 1
         }
+
+        //for pagination all records
+        this.handlePageChange=this.handlePageChange.bind(this);
     }
 
     handleClickOne () {
@@ -37,7 +52,164 @@ class List extends Component {
         }))
     }
 
+    componentDidMount() {
+        const urlGoverments = 'http://localhost:3001/goverments';
+        axios.get(urlGoverments).then(response => response.data)
+        .then((data) => {
+            this.setState({ governmentJson: data })
+            console.log(this.state.governmentJson)
+        })
+
+        const urlFoundations = 'http://localhost:3001/foundations';
+        axios.get(urlFoundations).then(response => response.data) 
+        .then((data)=> {
+            this.setState({ foundationJson: data })
+            console.log(this.state.foundationJson)
+        })
+
+        const urlLocales = 'http://localhost:3001/locales';
+        axios.get(urlLocales).then(response => response.data) 
+        .then((data)=> {
+            this.setState({ localJson: data })
+            console.log(this.state.localJson)
+        })
+    }
+
+    componentWillReceiveProps() {
+        this.setState({
+          currentPage: 1,
+        })
+      }
+
+    //for pagination all records
+    handlePageChange(event) {
+        this.setState({
+            currentPage: Number(event.target.id)
+        });
+    }
+
+    //Pagination from documentation
+    // handlePageChange(pageNumber) {
+    //     console.log(`active page is ${pageNumber}`);
+    //     this.setState({activePage: pageNumber});
+    //   }
+
     render() {
+        //for pagination all records
+        const { foundationJson, localJson,governmentJson, currentPage, listPerPage} = this.state;
+
+        const indexOfLast = currentPage * listPerPage;
+        const indexOfFirst = indexOfLast - listPerPage;
+
+        const currentListGovernment = governmentJson.slice(indexOfFirst, indexOfLast);
+        const currentListFoundation = foundationJson.slice(indexOfFirst, indexOfLast);
+        const currentListLocal = localJson.slice(indexOfFirst, indexOfLast);
+
+        //for pagination government
+        const renderListGovernment = currentListGovernment.map((govern, index) => {
+            return (
+            <div className="col-12 list-help government">
+
+                <div className="col-6">
+                    <h2 className="main-element">{govern.mainName}</h2>
+                    <p className="left-column">{govern.detailName}</p>
+                    <hr />
+                </div>
+                <div className="col-6">
+                    <p className="right-column text-one">{govern.rightName}</p>
+                    <hr className="line-right-column"/>
+                </div>
+
+            </div>
+             )})
+
+        const pageNumbersGovernment = [];
+            for (let i = 1; i <= Math.ceil(governmentJson.length / listPerPage); i++) {
+            pageNumbersGovernment.push(i);
+            }
+
+        const renderPageNumbersGovernment = pageNumbersGovernment.map(number => {
+            return (
+                <li
+                    key={number}
+                    id={number}
+                    onClick={this.handlePageChange}
+                >
+                {number}
+                </li>
+            );
+        });  
+
+        //for pagination foundation
+        const renderListFoundation = currentListFoundation.map((found, index) => {
+            return (
+            <div className="col-12 list-help foundation">
+
+                <div className="col-6">
+                    <h2 className="main-element">{found.mainName}</h2>
+                    <p className="left-column">{found.detailName}</p>
+                    <hr />
+                </div>
+                <div className="col-6">
+                    <p className="right-column text-one">{found.rightName}</p>
+                    <hr className="line-right-column"/>
+                </div>
+
+            </div>
+            )})
+
+        const pageNumbersFoundation = [];
+            for (let i = 1; i <= Math.ceil(foundationJson.length / listPerPage); i++) {
+            pageNumbersFoundation.push(i);
+            }
+
+        const renderPageNumbersFoundation = pageNumbersFoundation.map(number => {
+                return (
+                    <li
+                        key={number}
+                        id={number}
+                        onClick={this.handlePageChange}
+                    >
+                    {number}
+                    </li>
+                );
+        });  
+
+        //for pagination local
+        const renderListLocal = currentListLocal.map((loc, index) => {
+            return (
+            <div className="col-12 list-help local">
+
+                <div className="col-6">
+                    <h2 className="main-element">{loc.mainName}</h2>
+                    <p className="left-column">{loc.detailName}</p>
+                    <hr />
+                </div>
+                <div className="col-6">
+                    <p className="right-column text-one">{loc.rightName}</p>
+                    <hr className="line-right-column"/>
+                </div>
+
+            </div>
+            )})
+
+        const pageNumbersLocal = [];
+            for (let i = 1; i <= Math.ceil(localJson.length / listPerPage); i++) {
+            pageNumbersLocal.push(i);
+            }
+
+        const renderPageNumbersLocal = pageNumbersLocal.map(number => {
+                return (
+                    <li
+                        key={number}
+                        id={number}
+                        onClick={this.handlePageChange}
+                    >
+                    {number}
+                    </li>
+                );
+        });  
+
         return (
                 <>
                     <div className="col-12 organization">
@@ -53,74 +225,51 @@ class List extends Component {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed<br />do eiusmod tempor incididunt ut labore et dolore magna<br />aliqua. Ut enim ad minima veniam, quis nostrum exercitation.</p>
                     </div>
 
-                    {this.state.government ?
-                    <>
-                    <div className="col-12 list-help government">
-                        <div className="col-6">
-                            <h2 className="main-element">Organizacja "Lorem Ipsum 1"</h2>
-                            <p className="left-column">Quis varius quam quisque id diam vel quam elementum pulvinar.</p>
-                            <hr />
-                            <h2 className="main-element">Organizacja "Lorem Ipsum 2"</h2>
-                            <p className="left-column">Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.</p>
-                            <hr />
-                            <h2 className="main-element">Organizacja "Lorem Ipsum 3"</h2>
-                            <p className="left-column">Scelerisque in dictum non consectetur a erat nam.</p>
-                        </div>
-                        <div className="col-6">
-                            <p className="right-column text-one">Egestas, sed, tempus</p>
-                            <hr className="line-right-column"/>
-                            <p className="right-column text-two">Ut, aliquam, purus, sit, amet</p>
-                            <hr />
-                            <p className="right-column text-three">Mi, quis, hendrerit, dolor</p>
-                        </div>
-                    </div>
-                    </> : null }
 
-                    {this.state.foundation ?
-                        <>
-                    <div className="col-12 list-help foundation">
-                        <div className="col-6">
-                            <h2 className="main-element">Fundacja "Dbam o Zdrowie"</h2>
-                            <p className="left-column">Cel i mijsa: Pomoc osobom znajdującym się w studnej sytuacji życiowej.</p>
-                            <hr />
-                            <h2 className="main-element">Fundacja "Dla dzieci"</h2>
-                            <p className="left-column">Cel i misja: Pomoc dzieciom z ubogich rodzin.</p>
-                            <hr />
-                            <h2 className="main-element">Fundacja "Bez domu"</h2>
-                            <p className="left-column">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.</p>
-                        </div>
-                        <div className="col-6">
-                            <p className="right-column text-one">ubrania, jedzenie, sprzęt AGD, meble, zabawki</p>
-                            <hr className="line-right-column"/>
-                            <p className="right-column text-two">ubrania, meble, zabawki</p>
-                            <hr />
-                            <p className="right-column text-three">ubrania, jedzenie, ciepłe koce</p>
-                        </div>
-                    </div>
-                        </> : null }
+                            {this.state.government ?
+                            <>
+                                {renderListGovernment}
+                                
+                                <div className="col-12 page">
+                                    <ul id="page-numbers">
+                                        {renderPageNumbersGovernment}
+                                    </ul>
+                                </div>
 
-                    {this.state.local ?
-                        <>
-                    <div className="col-12 list-help local">
-                        <div className="col-6">
-                            <h2 className="main-element">Zbiórka "Lorem Ipsum 1"</h2>
-                            <p className="left-column">Quis varius quam quisque id diam vel quam elementum pulvinar.</p>
-                            <hr />
-                            <h2 className="main-element">Zbiórka "Lorem Ipsum 2"</h2>
-                            <p className="left-column">Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.</p>
-                            <hr />
-                            <h2 className="main-element">Zbiórka "Lorem Ipsum 3"</h2>
-                            <p className="left-column">Scelerisque in dictum non consectetur a erat nam.</p>
-                        </div>
-                        <div className="col-6">
-                            <p className="right-column text-one">Egestas, sed, tempus</p>
-                            <hr className="line-right-column"/>
-                            <p className="right-column text-two">Ut, aliquam, purus, sit, amet</p>
-                            <hr />
-                            <p className="right-column text-three">Mi, quis, hendrerit, dolor</p>
-                        </div>
-                    </div>
-                        </> : null }
+                            {/* <Pagination
+                                activePage={this.state.activePage}
+                                itemsCountPerPage={3}
+                                totalItemsCount={2}
+                                pageRangeDisplayed={2}
+                                onChange={this.handlePageChange}
+                            /> */}
+
+                            </> : null }
+
+                            
+                            {this.state.foundation ?
+                            <>
+                                {renderListFoundation}
+                                
+                                <div className="col-12 page">
+                                    <ul id="page-numbers">
+                                        {renderPageNumbersFoundation}
+                                    </ul>
+                                </div>
+                                </> : null }
+
+                                
+                            {this.state.local ?
+                            <>
+                                {renderListLocal}
+                                
+                                <div className="col-12 page">
+                                    <ul id="page-numbers">
+                                        {renderPageNumbersLocal}
+                                    </ul>
+                                </div>
+                            </> : null }
+
                 </>
             );
     }

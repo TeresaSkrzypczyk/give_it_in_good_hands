@@ -48,7 +48,7 @@ class Form extends Component {
                 // });
         })
         .catch (function (error) {
-                console.log(error);
+                console.log(error.response);
             //     res.status(401).json({ 
             //         success: false, 
             //         message: 'Something was wrong' 
