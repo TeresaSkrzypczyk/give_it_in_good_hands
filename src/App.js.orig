@@ -5,6 +5,7 @@ import {
   Switch,
 } from 'react-router-dom';
 //import logo from './logo.sv
+<<<<<<< HEAD
 import Home from './components/Home';
 import Log from './components/Logowanie';
 import LogOut from './components/LogOut';
@@ -24,6 +25,19 @@ function App () {
           </>
         </Router>
     );
+=======
+import Home from './components/home';
+import './scss/main.scss';
+
+function App () {
+    return (<HashRouter>
+      <>
+        <Switch>
+          <Route exact path='/' component={Home} />
+        </Switch>
+      </>
+    </HashRouter>);
+>>>>>>> origin/develop
 }
 
 export default App;

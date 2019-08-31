@@ -8,7 +8,8 @@ class Log extends Component {
         this.state = {
             email: "",
             password: "",
-            errors: [],
+            emailError: "",
+            passwordError: "",
             send: false
         }
     }
@@ -28,34 +29,20 @@ class Log extends Component {
     }
 
     validate() {
-        const errors = [];
+        let emailError = "";
+        let passwordError = "";
 
         if (this.state.email.length < 3 && this.state.email.indexOf("@") === -1) {
-            errors.push('Pole email musi zawierać znak @ i co najmniej 3 znaki')
+            emailError = 'Podany email jest nieprawidłowy!';
         }
         if (this.state.password.length < 6) {
-            errors.push('Hasło musi musi zawierać conajmniej 6 znaków');
+            passwordError = 'Podane hasło jest za krótkie!';
         }
-        this.setState({errors});
-        return errors.length === 0;
+        this.setState({emailError, passwordError });
+        return false;
     }
 
     render() {
-        const form = (
-                <form onSubmit={e => this.handleSubmit(e)}>
-                    <div className="log-form">
-                        <label>
-                            <span>Email</span><br />
-                            <input type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} /><br /> <hr className="log-line"/> </label>
-                        <label><span>Hasło</span><br /><input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} /><br /> <hr className="log-line"/></label>
-                    </div>
-                    <div className="log-button">
-                        <button className="btn"><Link to="/rejestracja"> Załóż konto</Link></button>
-                        <button className="btn" type="submit">Zaloguj się</button>
-                    </div>
-                </form>
-        );
-
         return (
                 <div className="wrapper-text">
                     <div className="row">
@@ -73,8 +60,24 @@ class Log extends Component {
                                 </div>
 
                                 <div>
-                                    <ul className="main-errors-list">{this.state.errors.map((error, index) => <li key={index}>{error}</li>)}</ul>
-                                    {this.state.send ? <h3>Dzięujemy</h3> : form}
+                                    <form onSubmit={e => this.handleSubmit(e)}>
+                                        <div className="log-form">
+                                            <label>
+                                                <span>Email</span><br />
+                                                <input className={this.state.emailError ? "inputWithError" : "inputWithoutError" } type="email" name="email" value={this.state.email} onChange={e => this.handleChange(e)} /><br /></label>
+                                            <div className="errors-form not-last">
+                                                {this.state.emailError}
+                                            </div>
+                                            <label><span>Hasło</span><br /><input className={this.state.passwordError ? "inputWithError" : "inputWithoutError" } type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} /><br /></label>
+                                            <div className="errors-form">
+                                                {this.state.passwordError}
+                                            </div>
+                                        </div>
+                                        <div className="log-button">
+                                            <button className="btn"><Link to="/rejestracja"> Załóż konto</Link></button>
+                                            <button className="btn" type="submit">Zaloguj się</button>
+                                        </div>
+                                    </form>
                                 </div>
 
                             </div>

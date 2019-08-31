@@ -19,13 +19,11 @@ form {
 
 }
 
-input:placeholder-shown {
-   border: none;
-}
-
 textarea {
-  border: none;
-  height: 4.5rem;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: $grey;
+  height: 5rem;
   width: 100%;
   font-family: $font-base;
 }
@@ -50,7 +48,6 @@ textarea {
   font-size: 0.75rem;
   text-align: center;
   padding-bottom: 1rem;
-  //position: absolute;
   margin-top: 34rem;
   margin-left: 34rem;
 }
