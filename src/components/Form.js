@@ -40,19 +40,9 @@ class Form extends Component {
         })
         .then (function (response) {
                 console.log(response);
-                // json({
-                //     status: "success"
-                //     success: true,
-                //     status: 200,
-                //     data: data
-                // });
         })
         .catch (function (error) {
-                console.log(error);
-            //     res.status(401).json({ 
-            //         success: false, 
-            //         message: 'Something was wrong' 
-            // });
+                console.log(error.response);
         });
 
     }

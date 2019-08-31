@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import axios from 'axios';
-//import Pagination from "react-js-pagination";
 
 class List extends Component {
     constructor(props) {
@@ -12,16 +11,9 @@ class List extends Component {
             governmentJson: [],
             foundationJson: [],
             localJson: [],
-            //for pagination all records
             currentPage: 1,
             listPerPage: 3
-
-            //activePage: 1,
-            // itemsCountPerPage: 1,
-            // totalItemsCount: 1
         }
-
-        //for pagination all records
         this.handlePageChange=this.handlePageChange.bind(this);
     }
 
@@ -87,12 +79,6 @@ class List extends Component {
             currentPage: Number(event.target.id)
         });
     }
-
-    //Pagination from documentation
-    // handlePageChange(pageNumber) {
-    //     console.log(`active page is ${pageNumber}`);
-    //     this.setState({activePage: pageNumber});
-    //   }
 
     render() {
         //for pagination all records
@@ -235,15 +221,6 @@ class List extends Component {
                                         {renderPageNumbersGovernment}
                                     </ul>
                                 </div>
-
-                            {/* <Pagination
-                                activePage={this.state.activePage}
-                                itemsCountPerPage={3}
-                                totalItemsCount={2}
-                                pageRangeDisplayed={2}
-                                onChange={this.handlePageChange}
-                            /> */}
-
                             </> : null }
 
                             
@@ -256,7 +233,7 @@ class List extends Component {
                                         {renderPageNumbersFoundation}
                                     </ul>
                                 </div>
-                                </> : null }
+                            </> : null }
 
                                 
                             {this.state.local ?

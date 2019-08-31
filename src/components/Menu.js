@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
-import Registration from "./registration";
+import Registration from "./Registration";
 import React, {Component} from "react";
 
 class Menu extends Component {
