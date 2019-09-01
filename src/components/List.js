@@ -120,6 +120,7 @@ class List extends Component {
                     key={number}
                     id={number}
                     onClick={this.handlePageChange}
+                    activeClass="active"
                 >
                 {number}
                 </li>
@@ -155,6 +156,7 @@ class List extends Component {
                         key={number}
                         id={number}
                         onClick={this.handlePageChange}
+                        activeClass="active"
                     >
                     {number}
                     </li>
@@ -190,6 +192,7 @@ class List extends Component {
                         key={number}
                         id={number}
                         onClick={this.handlePageChange}
+                        activeClass="active"
                     >
                     {number}
                     </li>

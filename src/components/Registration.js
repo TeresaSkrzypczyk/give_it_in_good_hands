@@ -6,8 +6,8 @@ class Registration extends Component {
         return [
             <div className="wrapper">
                 <ul className="registration">
-                    <li><Link to="/logowanie">Zaloguj</Link></li>
-                    <li><Link to="/rejestracja">Załóż konto</Link></li>
+                    <li activeClass="active"><Link to="/logowanie">Zaloguj</Link></li>
+                    <li activeClass="active"><Link to="/rejestracja">Załóż konto</Link></li>
                 </ul>
             </div>
         ]
